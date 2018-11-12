@@ -1,52 +1,34 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div class="container">
+<mat-sidenav-container [class.m2app-dark]="isDarkTheme">
 
-  <div class="row">
-    <div class="col-sm-12">
-      <button (click)="start()">start </button>
-      <button (click)="stop()">stop </button>
-      <button (click)="clear()">clear </button>
-
+  <mat-sidenav #sidenav mode="side">
+    <div class="flex-container" fxLayout="column">
+      <button class="flex-item" mat-button [routerLinkActive]="['active']" [routerLink]="['barcode']">Homepage
+      </button>
+      <div class="flex-item">
+        <hr>
+      </div>
+      <button class="flex-item" mat-button [routerLinkActive]="['active']" [routerLink]="['barcode/media']">Media Stream
+      </button>
+      <div class="flex-item">
+        <hr>
+      </div>
+      <button class="flex-item" mat-button [routerLinkActive]="['active']" [routerLink]="['barcode/field']">Input File
+      </button>
     </div>
-    <div class="col-sm-12">
-      <scandit-picker [scanSettings]="settings" (scan)="onScan($event)" (error)="onError($event)"></scandit-picker>
+  </mat-sidenav>
+  <mat-toolbar color="primary">
 
-      <!-- <ngx-treeview #Treeview [config]="config" [itemTemplate]="itemTemplate" [headerTemplate]="headerTemplate"  [items]="items"
-        (selectedChange)="onSelectedChange($event)" (filterChange)="onFilterChange($event)" (selectedChange)="values = $event">
-      </ngx-treeview> -->
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+    {{title}}
+    <span class="app-toolbar-filler"></span>
+    {{fork}}
 
-    </div>
-    <div class="col-sm-12">
-      {{mayData}}
-    </div>
+  </mat-toolbar>
+
+  <div class="app-content">
+    <router-outlet></router-outlet>
   </div>
-</div>
-
-<!-- 
-<ng-template #itemTemplate let-item="item" let-onCollapseExpand="onCollapseExpand" let-onCheckedChange="onCheckedChange">
-  <div class="form-inline row-item">
-    <div class="form-check">
-      <img *ngIf="item.isParent" src="../assets/1-imge.PNG" width="40px" height="40px">
-      <input *ngIf="!item.isParent" type="checkbox" class="form-check-input" [(ngModel)]="item.checked" (ngModelChange)="onCheckedChange()"
-        [disabled]="item.disabled" [indeterminate]="item.indeterminate" />
-      <label class="form-check-label" (click)="item.checked = !item.checked; onCheckedChange();">
-        {{item.text}}
-      </label>
-
-    </div>
-    <i *ngIf="item.children" (click)="onCollapseExpand()" aria-hidden="true" class="fa" [class.fa-plus]="!item.isParent && item.collapsed"
-      [class.fa-minus]="!item.isParent && !item.collapsed" [class.fa-caret-up]="item.isParent && item.collapsed"
-      [class.fa-caret-down]="item.isParent && !item.collapsed "></i>
-  </div>
-</ng-template>
-
-
-<ng-template #headerTemplate>
-
-  <input type="text" class="form-check-input" [formControl]="searchInput" />
-
-  <select style="width:200px" (change)="onSelectedFilterChanged($event.target.value)">
-    <option *ngFor="let item of options" value="{{item.value}}">{{item.text}}</option>
-  </select>
-
-</ng-template> -->
+</mat-sidenav-container>
+<app-fab-menu [isDarkTheme]="isDarkTheme"></app-fab-menu>
