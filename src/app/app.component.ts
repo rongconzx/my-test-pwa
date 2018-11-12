@@ -41,7 +41,7 @@ export class AppComponent implements OnInit, OnDestroy {
   options: any[] = [];
   @ViewChild('Treeview')
   treeview: TreeviewComponent;
-  public settings = new ScanSettings({ enabledSymbologies: [Barcode.Symbology.CODE39] });
+  public settings = new ScanSettings({ enabledSymbologies: [Barcode.Symbology.CODE128] });
   mayData: any = null;
 
   config = {
