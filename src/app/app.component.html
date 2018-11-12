@@ -4,7 +4,8 @@
   <div class="row">
 
     <div class="col-sm-12">
-      <scandit-picker [scanSettings]="settings" (scan)="onScan($event)" (error)="onError($event)"></scandit-picker>
+      <scandit-picker [scanSettings]="settings"                 (submitFrame)="onSubmitFrame($event)"
+       (scan)="onScan($event)" (error)="onError($event)"></scandit-picker>
 
       <!-- <ngx-treeview #Treeview [config]="config" [itemTemplate]="itemTemplate" [headerTemplate]="headerTemplate"  [items]="items"
         (selectedChange)="onSelectedChange($event)" (filterChange)="onFilterChange($event)" (selectedChange)="values = $event">
