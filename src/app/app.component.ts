@@ -13,6 +13,7 @@ import { observable, Observable, of } from 'rxjs';
 import { disableDebugTools } from '@angular/platform-browser';
 import { debug } from 'util';
 import { ScanSettings, Barcode, ScanResult } from 'scandit-sdk';
+import { ScanditService } from 'scandit-sdk-angular';
 
 
 
@@ -53,36 +54,19 @@ export class AppComponent implements OnInit, OnDestroy {
 
   };
 
-  constructor(updates: SwUpdate, private data: DataService) {
+  constructor(updates: SwUpdate, private data: DataService, private scaner: ScanditService) {
     updates.available.subscribe(event => {
       // console.log("ehllo");
       updates.activateUpdate().then(() => document.location.reload());
 
     });
-
   }
 
 
 
   ngOnInit() {
-    // this.data.getCategory()
-    //   .subscribe((reponse: any) => {
-    //     this.items = this.buildTreeViewCustom(<Category[]>reponse.ALL, null);
-    //     for (let item of this.items) {
-    //       item.isParent = true;
-    //     }
-    //     this.leafNode = this.getLeafNode(this.items);
-    //   });
+    this.scaner.picker.pauseScanning(true);
 
-    // this.searchInput.valueChanges.pipe(
-    //   debounceTime(400),
-    //   switchMap(input => this.search(<string>input))
-    // ).subscribe(items => {
-    //   this.options = [];
-    //   items.forEach(element => {
-    //     this.options.push({ text: element.displayFilterName, value: element.value });
-    //   });
-    // });
   }
   ngOnDestroy(): void {
   }
@@ -102,6 +86,17 @@ export class AppComponent implements OnInit, OnDestroy {
 
     }
   }
+
+  start() {
+    this.scaner.picker.pauseScanning(false);
+  }
+  stop() {
+    this.scaner.picker.pauseScanning(false);
+  }
+  clear() {
+    this.mayData = '';
+  }
+
 
   onError($event) {
     this.mayData = 'error=>' + JSON.stringify($event);
