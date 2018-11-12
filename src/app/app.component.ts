@@ -42,6 +42,7 @@ export class AppComponent implements OnInit, OnDestroy {
   @ViewChild('Treeview')
   treeview: TreeviewComponent;
   public settings = new ScanSettings({ enabledSymbologies: [Barcode.Symbology.CODE39] });
+  mayData: any = null;
 
   config = {
     hasAllCheckBox: false,
@@ -88,11 +89,11 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   onScan($event) {
-    console.log($event);
+    this.mayData = 'sucess=>' + JSON.stringify($event);
   }
 
   onError($event) {
-    console.log($event);
+    this.mayData = 'error=>' + JSON.stringify($event);
   }
 
 
