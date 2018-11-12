@@ -22,7 +22,7 @@ export class ScanditComponent {
 
     onScan($event: ScanResult) {
         if ($event.barcodes && $event.barcodes.length > 0) {
-            this.lastResult = $event.barcodes[0].data;
+            this.lastResult = $event.barcodes[$event.barcodes.length - 1].data;
             this.scaner.picker.pauseScanning(true);
         }
     }
