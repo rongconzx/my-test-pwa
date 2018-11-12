@@ -28,7 +28,7 @@ export class ScanditComponent {
     }
 
     restart() {
-        this.scaner.picker.pauseScanning(false);
+        this.scaner.picker.resumeScanning();
     }
 
     onError($event) {
