@@ -11,6 +11,8 @@ import { FabMenuComponent } from './shared/fab-menu/fab-menu.component';
 import { CoreModule } from './modules/core.module';
 import { BarcodeModule } from './barcode/barcode.module';
 import { MediaStreamComponent } from './barcode/media-stream/media-stream.component';
+import { InputFieldComponent } from './barcode/input-field/input-field.component';
+import { InstantSearchComponent } from './barcode/instant-search/instant-search.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { MediaStreamComponent } from './barcode/media-stream/media-stream.compon
     SidenavComponent,
     FabMenuComponent,
     MediaStreamComponent,
+    InputFieldComponent,
+    InstantSearchComponent
   ],
   imports: [
     CoreModule,
