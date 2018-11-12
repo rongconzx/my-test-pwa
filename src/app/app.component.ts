@@ -96,7 +96,7 @@ export class AppComponent implements OnInit, OnDestroy {
     if ($event.barcodes && $event.barcodes.length > 0) {
 
       $event.barcodes.forEach(element => {
-        this.mayData += this.mayData + ' ===== sucess=>' + element;
+        this.mayData += this.mayData + ' ===== sucess=>' + element.data;
 
       });
 
