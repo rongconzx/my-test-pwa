@@ -12,6 +12,10 @@ import { Component } from '@angular/core';
       <button mat-fab [routerLink]="['media']">
         <mat-icon>camera</mat-icon>
       </button>
+
+      <button mat-fab [routerLink]="['scandit']">
+      scandit
+    </button>
     </mat-card>
     <mat-card>
       <router-outlet></router-outlet>

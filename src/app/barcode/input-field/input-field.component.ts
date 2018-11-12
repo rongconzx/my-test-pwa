@@ -28,13 +28,13 @@ export class InputFieldComponent implements OnInit, OnDestroy {
               private decoderService: BarcodeDecoderService) {}
 
   ngOnInit() {
-    this.barcodeValidator.doSearchbyCode(this.code$)
-      .subscribe(
-        res => this.message = res,
-        err => {
-          this.message = `An Error! ${err.json().error}`;
-        },
-      );
+    // this.barcodeValidator.doSearchbyCode(this.code$)
+    //   .subscribe(
+    //     res => this.message = res,
+    //     err => {
+    //       this.message = `An Error! ${err.json().error}`;
+    //     },
+    //   );
   }
 
   sanitize(url: string) {

@@ -4,6 +4,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NgModule } from '@angular/core';
 import { BarcodeComponent } from './barcode/barcode.component';
 import { MediaStreamComponent } from './barcode/media-stream/media-stream.component';
+import { InputFieldComponent } from './barcode/input-field/input-field.component';
+import { ScanditComponent } from './barcode/scandit/scandit.component';
 
 const ROOT_ROUTES: Routes = [
   {
@@ -18,6 +20,14 @@ const ROOT_ROUTES: Routes = [
   {
     path: 'barcode/media',
     component: MediaStreamComponent,
+  },
+  {
+    path: 'barcode/field',
+    component: InputFieldComponent,
+  },
+  {
+    path: 'barcode/scandit',
+    component: ScanditComponent,
   },
   {
     path: '404',
