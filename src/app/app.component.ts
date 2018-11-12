@@ -56,7 +56,6 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(updates: SwUpdate, private data: DataService) {
     updates.available.subscribe(event => {
       // console.log("ehllo");
-      //this.update = true;
       updates.activateUpdate().then(() => document.location.reload());
 
     });
@@ -86,6 +85,11 @@ export class AppComponent implements OnInit, OnDestroy {
     // });
   }
   ngOnDestroy(): void {
+  }
+
+  onSubmitFrame($event) {
+    this.mayData = 'onSubmitFrame=>' + JSON.stringify($event);
+
   }
 
   onScan($event) {
