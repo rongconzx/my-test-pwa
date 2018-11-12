@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
         <mat-icon>file_upload</mat-icon>
       </button>
       <button mat-fab [routerLink]="['media']">
-        <mat-icon>camera</mat-icon>
+      quaggaJs
       </button>
 
       <button mat-fab [routerLink]="['scandit']">
