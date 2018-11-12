@@ -12,7 +12,7 @@ import { debounceTime, map, switchMap } from 'rxjs/operators';
 import { observable, Observable, of } from 'rxjs';
 import { disableDebugTools } from '@angular/platform-browser';
 import { debug } from 'util';
-import { ScanSettings, Barcode } from 'scandit-sdk';
+import { ScanSettings, Barcode, ScanResult } from 'scandit-sdk';
 
 
 
@@ -92,8 +92,15 @@ export class AppComponent implements OnInit, OnDestroy {
 
   }
 
-  onScan($event) {
-    this.mayData = 'sucess=>' + JSON.stringify($event);
+  onScan($event: ScanResult) {
+    if ($event.barcodes && $event.barcodes.length > 0) {
+
+      $event.barcodes.forEach(element => {
+        this.mayData += this.mayData + ' ===== sucess=>' + element;
+
+      });
+
+    }
   }
 
   onError($event) {
