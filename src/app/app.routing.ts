@@ -30,12 +30,8 @@ const ROOT_ROUTES: Routes = [
     component: ScanditComponent,
   },
   {
-    path: '404',
-    component: NotFoundComponent,
-  },
-  {
     path: '**',
-    redirectTo: '404',
+    redirectTo: '',
     pathMatch: 'full',
   },
 
