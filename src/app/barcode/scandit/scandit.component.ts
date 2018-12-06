@@ -13,6 +13,7 @@ export class ScanditComponent {
     lastResult: any;
     message: any;
     error: any;
+    isPause = false;
 
 
     constructor(private scaner: ScanditService) {
@@ -23,12 +24,12 @@ export class ScanditComponent {
     onScan($event: ScanResult) {
         if ($event.barcodes && $event.barcodes.length > 0) {
             this.lastResult = $event.barcodes[$event.barcodes.length - 1].data;
-            this.scaner.picker.pauseScanning(true);
+            this.isPause = true;
         }
     }
 
     restart() {
-        this.scaner.picker.resumeScanning();
+        this.isPause = false;
     }
 
     onError($event) {

@@ -27,5 +27,5 @@
         <p *ngIf="message">{{message}}</p>
     </div>
 
-    <scandit-picker [scanSettings]="settings" (scan)="onScan($event)" (error)="onError($event)"></scandit-picker>
+    <scandit-picker [paused]="isPause" [scanSettings]="settings" (scan)="onScan($event)" (error)="onError($event)"></scandit-picker>
 </mat-card>
