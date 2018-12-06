@@ -34,6 +34,7 @@ export class ScanditComponent {
     }
 
     onError($event) {
+        alert( $event.message );
         console.log($event);
     }
 
