@@ -27,6 +27,10 @@ export class ScanditComponent {
             alert(this.lastResult);
             this.isPause = true;
         }
+        else{
+            alert(this.lastResult);
+
+        }
     }
 
     restart() {

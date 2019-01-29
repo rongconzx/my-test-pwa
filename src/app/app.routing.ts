@@ -30,8 +30,12 @@ const ROOT_ROUTES: Routes = [
     component: ScanditComponent,
   },
   {
+    path: 'barcode/orc',
+    component: BarcodeComponent,
+  },
+  {
     path: '**',
-    redirectTo: '',
+    component: AppComponent,
     pathMatch: 'full',
   },
 
