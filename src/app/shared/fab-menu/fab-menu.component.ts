@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { trigger, state, style, transition, animate, group, keyframes } from '@angular/animations';
 
 @Component({
+  standalone: false,
   selector: 'app-fab-menu',
   templateUrl: './fab-menu.component.html',
   styles: [],

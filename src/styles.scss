@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* fallback */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
 
 @font-face {
   font-family: 'Material Icons';
@@ -129,6 +129,42 @@ md-sidenav-layout.m2app-dark {
   padding-bottom: 10px;
 }
 
+.flex-container {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.input-layout {
+  align-items: center;
+  justify-content: center;
+}
+
+.input-card {
+  flex: 1 1 50%;
+  min-width: 0;
+}
+
+.input-form {
+  flex: 1 1 100%;
+}
+
+.input-upload {
+  flex: 0 0 10%;
+}
+
+.app-legal-footer {
+  padding: 16px;
+  text-align: center;
+}
+
 .text-center {
   text-align: center;
 }
@@ -183,6 +219,11 @@ md-sidenav-layout.m2app-dark {
 }
 
 @media all and (max-width: 730px) {
+  .input-layout {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .hidden__sm {
     display: none;
   }

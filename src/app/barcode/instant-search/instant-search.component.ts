@@ -3,12 +3,13 @@ import { BarcodeValidatorService } from '../../services/barcode-validator.servic
 import { Subject } from 'rxjs';
 
 @Component({
+  standalone: false,
   selector: 'app-instant-search',
   template: `
     <mat-card>
       <input class="instantInput" (input)="code$.next($event.target.value)" (keydown)="onChange()"
              placeholder="Type your barcode number">
-      <div class="flex-container text-center" fxLayout="row" fxLayoutAlign="center center">
+      <div class="flex-container flex-center text-center">
         <div class="flex-item">
           <mat-spinner color="accent" class="app-spinner" *ngIf="spinner"></mat-spinner>
         </div>

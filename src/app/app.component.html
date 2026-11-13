@@ -1,7 +1,7 @@
 <mat-sidenav-container [class.m2app-dark]="isDarkTheme">
 
   <mat-sidenav #sidenav mode="side">
-    <div class="flex-container" fxLayout="column">
+    <div class="flex-container flex-column">
       <button class="flex-item" mat-button [routerLinkActive]="['active']" [routerLink]="['barcode']">Homepage
       </button>
       <div class="flex-item">
@@ -13,6 +13,18 @@
         <hr>
       </div>
       <button class="flex-item" mat-button [routerLinkActive]="['active']" [routerLink]="['barcode/field']">Input File
+      </button>
+      <div class="flex-item">
+        <hr>
+      </div>
+      <button class="flex-item" mat-button [routerLinkActive]="['active']" [routerLink]="['privacy-policy']">Privacy
+        Policy
+      </button>
+      <div class="flex-item">
+        <hr>
+      </div>
+      <button class="flex-item" mat-button [routerLinkActive]="['active']" [routerLink]="['terms-of-service']">Terms
+        of Service
       </button>
     </div>
   </mat-sidenav>
@@ -29,6 +41,11 @@
 
   <div class="app-content">
     <router-outlet></router-outlet>
+    <footer class="app-legal-footer">
+      <a [routerLink]="['privacy-policy']">Privacy Policy</a>
+      <span aria-hidden="true"> | </span>
+      <a [routerLink]="['terms-of-service']">Terms of Service</a>
+    </footer>
   </div>
 </mat-sidenav-container>
 <app-fab-menu [isDarkTheme]="isDarkTheme"></app-fab-menu>

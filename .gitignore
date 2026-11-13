@@ -40,3 +40,4 @@ testem.log
 Thumbs.db
 ng2-barcode-validator.iml
 ngx-barcode-validator.iml
+/.angular

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-barcode',
   template: `
     <mat-card class="text-center">
@@ -12,10 +13,6 @@ import { Component } from '@angular/core';
       <button mat-fab [routerLink]="['media']">
       quaggaJs
       </button>
-
-      <button mat-fab [routerLink]="['scandit']">
-      scandit
-    </button>
     </mat-card>
     <mat-card>
       <router-outlet></router-outlet>

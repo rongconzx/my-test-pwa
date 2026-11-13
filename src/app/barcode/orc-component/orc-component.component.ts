@@ -7,6 +7,7 @@ import { Tesseract } from 'tesseract.ts';
 
 
 @Component({
+  standalone: false,
   selector: 'app-vin-scanner',
   templateUrl: './orc-component.component.html',
   styleUrls: ['./orc-component.component.scss'],
@@ -153,4 +154,3 @@ export class OrcComponentComponent implements OnInit, OnDestroy {
     return vin.match(re);
   }
 }
-

@@ -5,6 +5,7 @@ import { BarcodeDecoderService } from '../../services/barcode-decoder.service';
 import { Subject } from 'rxjs';
 
 @Component({
+  standalone: false,
   selector: 'app-input-field',
   templateUrl: './input-field.component.html',
   styleUrls: ['./input-field.component.scss'],

@@ -1,23 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
   isDarkTheme = false;
   title = 'Angular Barcode Scanner and Validator Using Observable (RxJS)';
   fork = 'FORK ME!';
 
-  constructor(private router: Router) {
+  constructor() {
     this.isDarkTheme = false;
-  }
-
-  ngOnInit() {
-    this.router.navigateByUrl('/barcode');
   }
 
 }

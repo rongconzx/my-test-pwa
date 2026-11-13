@@ -1,17 +1,23 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { InputFieldComponent } from './input-field.component';
+import { BarcodeDecoderService } from '../../../services/barcode-decoder.service';
+import { BarcodeValidatorService } from '../../../services/barcode-validator.service';
 
 describe('InputFieldComponent', () => {
   let component: InputFieldComponent;
   let fixture: ComponentFixture<InputFieldComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [InputFieldComponent],
+      providers: [
+        { provide: BarcodeDecoderService, useValue: {} },
+        { provide: BarcodeValidatorService, useValue: {} },
+      ],
+      schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();
   }));

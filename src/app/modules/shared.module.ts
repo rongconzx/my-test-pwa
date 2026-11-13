@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import {
-  MatAutocompleteModule,
-  MatButtonModule, MatCardModule, MatCommonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatSelectModule, MatSidenavModule,
-  MatSnackBarModule,
-  MatToolbarModule,
-} from '@angular/material';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 // modules
 const SHARED_COMPONENTS = [];
@@ -31,7 +35,6 @@ const SHARED_MODULES: any[] = [
   MatSelectModule,
   MatInputModule,
   MatFormFieldModule,
-  MatCommonModule,
   MatProgressSpinnerModule,
   MatProgressBarModule,
   MatListModule,

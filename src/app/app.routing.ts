@@ -1,16 +1,16 @@
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NgModule } from '@angular/core';
 import { BarcodeComponent } from './barcode/barcode.component';
 import { MediaStreamComponent } from './barcode/media-stream/media-stream.component';
 import { InputFieldComponent } from './barcode/input-field/input-field.component';
-import { ScanditComponent } from './barcode/scandit/scandit.component';
+import { PrivacyPolicyComponent } from './legal/privacy-policy.component';
+import { TermsOfServiceComponent } from './legal/terms-of-service.component';
 
 const ROOT_ROUTES: Routes = [
   {
     path: '',
-    component: AppComponent,
+    redirectTo: '/barcode',
     pathMatch: 'full',
   },
   {
@@ -26,17 +26,20 @@ const ROOT_ROUTES: Routes = [
     component: InputFieldComponent,
   },
   {
-    path: 'barcode/scandit',
-    component: ScanditComponent,
-  },
-  {
     path: 'barcode/orc',
     component: BarcodeComponent,
   },
   {
+    path: 'privacy-policy',
+    component: PrivacyPolicyComponent,
+  },
+  {
+    path: 'terms-of-service',
+    component: TermsOfServiceComponent,
+  },
+  {
     path: '**',
-    component: AppComponent,
-    pathMatch: 'full',
+    component: NotFoundComponent,
   },
 
 ];
@@ -50,4 +53,3 @@ const ROOT_ROUTES: Routes = [
   ],
 })
 export class AppRoutingModule { }
-

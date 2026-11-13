@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
 
 
 @Component({
+  standalone: false,
   selector: 'app-media-stream',
   templateUrl: './media-stream.component.html',
   styleUrls: ['./media-stream.component.scss'],
