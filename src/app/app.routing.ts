@@ -10,7 +10,7 @@ import { TermsOfServiceComponent } from './legal/terms-of-service.component';
 const ROOT_ROUTES: Routes = [
   {
     path: '',
-    redirectTo: '/barcode',
+    redirectTo: '/privacy-policy',
     pathMatch: 'full',
   },
   {
